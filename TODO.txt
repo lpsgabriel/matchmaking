@@ -1,0 +1,1 @@
+adicionar verificação se player já existe através do link steam
