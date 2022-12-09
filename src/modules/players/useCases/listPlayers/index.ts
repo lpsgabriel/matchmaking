@@ -1,9 +1,9 @@
-import { PlayersRepository } from "../../repositories/PlayersRepository";
+import { PlayersRepository } from "../../repositories/implementations/PlayersRepository";
 import { ListPlayersController } from "./ListPlayersController";
 import { ListPlayersUseCase } from "./ListPlayersUseCase";
 
-const playersRepository = new PlayersRepository();
+const playersRepository = PlayersRepository.getInstance();
 const listPlayersUseCase = new ListPlayersUseCase(playersRepository);
 const listPlayersController = new ListPlayersController(listPlayersUseCase);
 
-export { listPlayersController }
+export { listPlayersController };

@@ -1,5 +1,5 @@
-import { Map } from "../model/Map";
-import { IMapsRepository, ICreateMapDTO } from "./IMapsRepository";
+import { Map } from "../../model/Map";
+import { IMapsRepository, ICreateMapDTO } from "../IMapsRepository";
 
 class MapsRepository implements IMapsRepository {
   private maps: Map[];

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { createMap } from "../modules/maps/useCases/createMap/createMapController";
 import { getMaps } from "../modules/maps/useCases/getMaps/getMapsController";
-import { MapsRepository } from "../modules/maps/repositories/MapsRepository";
+import { MapsRepository } from "../modules/maps/repositories/implementations/MapsRepository";
 
 export const mapRoutes = Router();
 export const mapsRepository = new MapsRepository();
