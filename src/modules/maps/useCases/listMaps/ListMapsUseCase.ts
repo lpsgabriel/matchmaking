@@ -1,10 +1,10 @@
 import { IMapsRepository } from "../../repositories/IMapsRepository";
 
-class GetMapsService {
+class ListMapsUseCase {
   constructor(private mapsRepository: IMapsRepository) {}
   execute() {
     return this.mapsRepository;
   }
 }
 
-export { GetMapsService };
+export { ListMapsUseCase };

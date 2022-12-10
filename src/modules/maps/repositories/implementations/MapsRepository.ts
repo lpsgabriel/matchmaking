@@ -4,8 +4,17 @@ import { IMapsRepository, ICreateMapDTO } from "../IMapsRepository";
 class MapsRepository implements IMapsRepository {
   private maps: Map[];
 
-  constructor() {
+  private static INSTANCE: MapsRepository;
+
+  private constructor() {
     this.maps = [];
+  }
+
+  public static getInstance(): MapsRepository {
+    if (!MapsRepository.INSTANCE) {
+      MapsRepository.INSTANCE = new MapsRepository();
+    }
+    return MapsRepository.INSTANCE;
   }
 
   create({ name }: ICreateMapDTO) {

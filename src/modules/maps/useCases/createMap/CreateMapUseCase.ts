@@ -1,6 +1,6 @@
 import { IMapsRepository } from "../../repositories/IMapsRepository";
 
-class CreateMapService {
+class CreateMapUseCase {
   constructor(private mapsRepository: IMapsRepository) {}
   execute(name: string) {
     const mapAlreadyExists = this.mapsRepository.findByName(name);
@@ -14,4 +14,4 @@ class CreateMapService {
   }
 }
 
-export { CreateMapService };
+export { CreateMapUseCase };

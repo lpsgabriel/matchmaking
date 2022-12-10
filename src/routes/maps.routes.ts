@@ -1,10 +1,13 @@
 import { Router } from "express";
-import { createMap } from "../modules/maps/useCases/createMap/createMapController";
-import { getMaps } from "../modules/maps/useCases/getMaps/getMapsController";
-import { MapsRepository } from "../modules/maps/repositories/implementations/MapsRepository";
+import { listMapsController } from "../modules/maps/useCases/listMaps";
+import { createMapController } from "../modules/maps/useCases/createMap";
 
 export const mapRoutes = Router();
-export const mapsRepository = new MapsRepository();
 
-mapRoutes.post("/createmap", createMap);
-mapRoutes.get("/allmaps", getMaps);
+mapRoutes.post("/createmap", (request, response) => {
+  return createMapController.handle(request, response);
+});
+
+mapRoutes.get("/allmaps", (request, response) => {
+  return listMapsController.handle(request, response);
+});
